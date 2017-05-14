@@ -21,11 +21,11 @@ namespace SLMPLauncher
                 {
                     if (line.StartsWith("-s="))
                     {
-                        FormMain.startWithGame = line;
+                        FormMain.startWithGame = line.Remove(0, 3);
                     }
                     else if (line.StartsWith("-w="))
                     {
-                        FormMain.waitBeforeStart = line;
+                        FormMain.waitBeforeStart = line.Remove(0, 3);
                     }
                 }
             }
