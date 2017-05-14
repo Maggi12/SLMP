@@ -171,7 +171,8 @@ namespace SLMPLauncher
         {
             if (checkedListBox1.SelectedIndex != -1)
             {
-                listBox1.DataSource = FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString());
+                listBox1.Items.Clear();
+                listBox1.Items.AddRange(FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString()).ToArray());
             }
         }
         private void checkedListBox1_MouseDown(object sender, MouseEventArgs e)
@@ -211,7 +212,8 @@ namespace SLMPLauncher
                     blockCheck = false;
                 }
             }
-            listBox1.DataSource = FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString());
+            listBox1.Items.Clear();
+            listBox1.Items.AddRange(FuncParser.parserESPESM(dataFolder + checkedListBox1.SelectedItem.ToString()).ToArray());
         }
         private void inserItem(int index1, int index2)
         {
@@ -311,6 +313,7 @@ namespace SLMPLauncher
             checkedListBox1.MouseDown -= new System.Windows.Forms.MouseEventHandler(checkedListBox1_MouseDown);
             checkedListBox1.MouseUp -= new System.Windows.Forms.MouseEventHandler(checkedListBox1_MouseUp);
             checkedListBox1.Items.Clear();
+            listBox1.Items.Clear();
             filesDataES.Clear();
             pluginsList.Clear();
             filesDataES.AddRange(Directory.GetFiles(dataFolder, "*.esm").Select(f => f.Substring((dataFolder).Length)));
