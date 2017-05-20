@@ -660,6 +660,7 @@ namespace SLMPLauncher
         }
         private void refrashVsync()
         {
+            FuncSettings.ENBCheck(false);
             vsync = FuncMisc.RefreshButton(buttonVsync, FormMain.iniSkyrim, "Display", "iPresentInterval", null, false);
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////

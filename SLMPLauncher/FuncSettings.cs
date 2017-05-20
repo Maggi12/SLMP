@@ -188,11 +188,33 @@ namespace SLMPLauncher
             }
             if (FuncParser.stringRead(FormMain.iniSkyrimPrefs, "Display", "bFull Screen") == "0")
             {
-                FuncParser.iniWrite(FormENBMenu.enbLocal, "WINDOW", "ForceBorderless", "true");
+                setBorderless("true");
             }
             else
             {
-                FuncParser.iniWrite(FormENBMenu.enbLocal, "WINDOW", "ForceBorderless", "false");
+                setBorderless("false");
+            }
+            if (FuncParser.stringRead(FormMain.iniSkyrim, "Display", "iPresentInterval") == "1")
+            {
+                setVsync("true");
+            }
+            else
+            {
+                setVsync("false");
+            }
+        }
+        private static void setBorderless(string line)
+        {
+            if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
+            {
+                FuncParser.iniWrite(FormENBMenu.enbLocal, "WINDOW", "ForceBorderless", line);
+            }
+        }
+        private static void setVsync(string line)
+        {
+            if (File.Exists(FormMain.gameFolder + "d3d9.dll"))
+            {
+                FuncParser.iniWrite(FormENBMenu.enbLocal, "ENGINE", "EnableVSync", line);
             }
         }
     }
