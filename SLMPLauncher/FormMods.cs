@@ -124,8 +124,6 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonClose_Click(object sender, EventArgs e)
         {
-            BackgroundImage = null;
-            DoubleBuffered = false;
             Dispose();
         }
     }

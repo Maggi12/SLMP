@@ -337,8 +337,6 @@ namespace SLMPLauncher
             client.CancelAsync();
             FuncFiles.Delete(updateFolder + nameControlPanel);
             FuncFiles.Delete(updateFolder + nameUpdateInfo);
-            BackgroundImage = null;
-            DoubleBuffered = false;
             Dispose();
         }
     }
