@@ -52,9 +52,9 @@ namespace SLMPLauncher
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonUpdates_Click(object sender, System.EventArgs e)
         {
-            FormUpdates upd = new FormUpdates();
-            upd.ShowDialog(this.Owner);
-            upd.Dispose();
+            var form = new FormUpdates();
+            form.ShowDialog(this.Owner);
+            form = null;
         }
     }
 }

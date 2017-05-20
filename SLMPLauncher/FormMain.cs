@@ -334,9 +334,10 @@ namespace SLMPLauncher
                 FuncFiles.CopyAnyFiles(launcherFolder + @"MasterList\DLCList.txt", appDataPath + @"DLCList.txt");
                 FuncFiles.CopyAnyFiles(launcherFolder + @"MasterList\plugins.txt", appDataPath + @"plugins.txt");
                 FuncFiles.CopyAnyFiles(launcherFolder + @"MasterList\Plugins.tes5viewsettings", appDataPath + @"Plugins.tes5viewsettings");
-                FormOptions opt = new FormOptions();
-                opt.resetSettings();
-                opt.Close();
+                var form = new FormOptions();
+                form.resetSettings();
+                form.Dispose();
+                form = null;
             }
             else
             {
@@ -400,8 +401,9 @@ namespace SLMPLauncher
             label1.Focus();
             if (Directory.Exists(gameFolder + "_Programs"))
             {
-                var dialog = new FormPrograms();
-                dialog.ShowDialog();
+                var form = new FormPrograms();
+                form.ShowDialog();
+                form = null;
             }
             else
             {
@@ -412,8 +414,9 @@ namespace SLMPLauncher
         private void buttonENBmenu_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            var dialog = new FormENBMenu();
-            dialog.ShowDialog();
+            var form = new FormENBMenu();
+            form.ShowDialog();
+            form = null;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonSkyrim_Click(object sender, EventArgs e)
@@ -475,8 +478,9 @@ namespace SLMPLauncher
         private void buttonMods_Click(object sender, EventArgs e)
         {
             label1.Focus();
-            var dialog = new FormMods();
-            dialog.ShowDialog();
+            var form = new FormMods();
+            form.ShowDialog();
+            form = null;
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
         private void buttonOptions_Click(object sender, EventArgs e)
@@ -484,8 +488,9 @@ namespace SLMPLauncher
             label1.Focus();
             if (File.Exists(iniSkyrim) && File.Exists(iniSkyrimPrefs) && File.Exists(appDataPath + @"plugins.txt"))
             {
-                var dialog = new FormOptions();
-                dialog.ShowDialog();
+                var form = new FormOptions();
+                form.ShowDialog();
+                form = null;
             }
             else
             {
@@ -512,14 +517,15 @@ namespace SLMPLauncher
             {
                 windgetOpen = true;
                 settingsWidget = new FormWidget();
-                settingsWidget.Show(this);
                 settingsWidget.DesktopLocation = new Point(Left, Top - settingsWidget.Size.Height);
+                settingsWidget.Show(this);
                 buttonWidget.BackgroundImage = Properties.Resources.buttonWidgetPressed;
             }
             else
             {
                 windgetOpen = false;
-                settingsWidget.Close();
+                settingsWidget.Dispose();
+                settingsWidget = null;
                 buttonWidget.BackgroundImage = Properties.Resources.buttonWidget;
             }
         }
@@ -530,7 +536,8 @@ namespace SLMPLauncher
             if (windgetOpen)
             {
                 windgetOpen = false;
-                settingsWidget.Close();
+                settingsWidget.Dispose();
+                settingsWidget = null;
                 buttonWidget.BackgroundImage = Properties.Resources.buttonWidget;
             }
         }
