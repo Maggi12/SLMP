@@ -128,6 +128,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SLMP: Settings Widget";
+            this.Activated += new System.EventHandler(this.FormWidget_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
