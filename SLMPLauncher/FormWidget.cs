@@ -50,7 +50,7 @@ namespace SLMPLauncher
             ImageBackgroundImage();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void FormWidget_Activated(object sender, System.EventArgs e)
+        private void FormWidget_Enter(object sender, System.EventArgs e)
         {
             this.Owner.Focus();
         }
