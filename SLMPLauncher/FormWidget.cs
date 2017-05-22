@@ -40,6 +40,7 @@ namespace SLMPLauncher
             mainFormStyle = Owner as FormMain;
             mainFormStyle.RefreshStyle();
             ImageBackgroundImageNone();
+            this.Owner.Focus();
         }
         private void buttonStyle2_Click(object sender, System.EventArgs e)
         {
@@ -48,9 +49,10 @@ namespace SLMPLauncher
             mainFormStyle = Owner as FormMain;
             mainFormStyle.RefreshStyle();
             ImageBackgroundImage();
+            this.Owner.Focus();
         }
         //////////////////////////////////////////////////////ГРАНИЦА ФУНКЦИИ//////////////////////////////////////////////////////////////
-        private void FormWidget_Enter(object sender, System.EventArgs e)
+        private void label2_Click(object sender, System.EventArgs e)
         {
             this.Owner.Focus();
         }
@@ -60,6 +62,7 @@ namespace SLMPLauncher
             var form = new FormUpdates();
             form.ShowDialog(this.Owner);
             form = null;
+            this.Owner.Focus();
         }
     }
 }

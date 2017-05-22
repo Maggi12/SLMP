@@ -74,6 +74,8 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Стили оформления";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label2_Click);
+            this.label1.DoubleClick += new System.EventHandler(this.label2_Click);
             // 
             // label2
             // 
@@ -83,6 +85,8 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(289, 60);
             this.label2.TabIndex = 0;
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.label2.DoubleClick += new System.EventHandler(this.label2_Click);
             // 
             // buttonUpdates
             // 
@@ -104,6 +108,8 @@
             this.pictureBox1.Size = new System.Drawing.Size(1, 62);
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.label2_Click);
+            this.pictureBox1.DoubleClick += new System.EventHandler(this.label2_Click);
             // 
             // FormWidget
             // 
@@ -128,7 +134,6 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "SLMP: Settings Widget";
-            this.Enter += new System.EventHandler(this.FormWidget_Enter);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
